@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import './App.css'
-import Card from './Card';
+import Card from './Card'
 
 function App() {
-  const item = {
+  const item1 = {
     nome: 'Rick Sanchez',
     foto: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
   }
@@ -16,11 +17,14 @@ function App() {
     nome: 'Summer Smith',
     foto: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
   }
+  const personagens = [item1, item2, item3]
   return (
     <>
-      <Card info={item1} />
-      <Card info={item2} />
-      <Card info={item3} />
+      {
+        personagens.map(function (umPersonagem){
+          return <Card info={umPersonagem} />
+        })
+      }
     </>
   )
 }
