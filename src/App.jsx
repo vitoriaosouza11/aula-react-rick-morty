@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Card from './Card'
 
@@ -20,11 +19,13 @@ function App() {
   const personagens = [item1, item2, item3]
   return (
     <>
+    <div className='lista'>
       {
-        personagens.map(function (umPersonagem){
+        personagens.map(function (umPersonagem) {
           return <Card info={umPersonagem} />
         })
       }
+      </div>
     </>
   )
 }
